@@ -1,24 +1,25 @@
 # vue_dashboard
 
-## Project setup
+Welcome to my dashboard! To run:
+
+### Install Vue CLI
 ```
-npm install
+npm install -g @vue/cli
 ```
 
-### Compiles and hot-reloads for development
+### Create vue project structure
+```
+vue create hello-world
+```
+
+### Compile and load site for development
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compile and run for production
 ```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
