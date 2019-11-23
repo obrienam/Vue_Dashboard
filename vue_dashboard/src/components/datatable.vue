@@ -1,16 +1,7 @@
 <template>
-    <div id="datatable">
-      <section v-if="err">
-        <p class="title">FiWare</p>
-        <p>No Data Detected!</p>
-      </section>
-      <section v-else>
-        <p class="title">Fiware Data</p>
-          
-          <b-table :data="d" :columns="columns" backend-sorting backend-pagination></b-table>
-        
-       
-      </section>
+    <div id="cointable">
+        <p class="title">Bitcoin Value</p>
+          <b-table :data="dbcoin" :columns="columns" backend-sorting backend-pagination></b-table>
     </div>
 </template>
 
@@ -30,32 +21,20 @@ Vue.use(Buefy, axios,{
 class datatable extends Vue{
     
   err=false;
-  d=[]; 
+  dbcoin=[]; 
   dusd=[];
   dgb=[];
   deur=[];
-       
+ 
   //isPaginated= true; isPaginationSimple: false;paginationPosition: 'bottom', perPage: 5, currentPage: 1
   columns=[
     {
-      field:"code",
-      label:"Code",
-    },
-    {
-      field:"symbol",
-      label:"Symbol",
-    },
-    {
       field:"rate",
-      label:"Rate",
+      label:"Exchange Rate",
     },
     {
       field:"description",
-      label:"Description",
-    },
-    {
-      field:"rate_float",
-      label:"Rate_Float",
+      label:"Currency",
     }
   ];
   mounted () {
@@ -63,13 +42,12 @@ class datatable extends Vue{
       //.get('http://35.172.221.32:1026/v2/entities')
       .get('https://api.coindesk.com/v1/bpi/currentprice.json')
       .then(response => {
-   
         this.dusd = response.data.bpi.USD;
         this.dgb = response.data.bpi.GBP;
         this.deur = response.data.bpi.EUR;
-        this.d.push(this.dusd)
-        this.d.push(this.dgb)
-        this.d.push(this.deur)
+        this.dbcoin.push(this.dusd)
+        this.dbcoin.push(this.dgb)
+        this.dbcoin.push(this.deur)
       })
   }
 

@@ -14,30 +14,29 @@
     </b-navbar>
     <div id="page-wrap">
     <b-tabs type="is-toggle" position="is-centered" mobile-burger="true" left="true" >
-      <b-tab-item label="Fiware">
+      <b-tab-item label="Cryptocurrency">
       <nav class="breadcrumb" aria-label="breadcrumbs">
       <ul>
         <li><a href="#">Home</a></li>
-        <li class="is-active"><a href="#" aria-current="page">Fiware</a></li>
+        <li class="is-active"><a href="#" aria-current="page">Cryptocurrency</a></li>
       </ul>
       </nav>
       <div class="tile is-ancestor">
         <div class="tile is-parent">
           <div class="tile is-child box">
-            <div class="tile is-child  box">
-              <p class="title">FiWare</p>
-              <img src="../public/img/svg/logo.svg" class="photon">
-            </div>
-            <div class="tile is-child  box">
-              <datatable/>
-            </div>
+            <p class="title">Cryptocurrency</p>
+              <img src="../public/img/logo.png" class="bcoin">
+            
           </div> 
         </div>
         
         <div class="tile is-5 is-vertical is-parent">
         <div class="tile is-child box">
-          <datatable/>
+          <cointable/>
         </div>
+        <div class="tile is-child  box">
+          <cointable/>
+            </div>
         </div>
         
       </div>
@@ -75,15 +74,15 @@ import Vue from 'vue'
 import Buefy from 'buefy'
 import 'font-awesome/css/font-awesome.min.css'
 import axios from 'axios'
-import datatable from './components/datatable.vue'
+import cointable from './components/datatable.vue'
 
-Vue.use(Buefy, axios,datatable,{
+Vue.use(Buefy, axios,cointable,{
   defaultIconPack: "fa"
 })
 export default {
   name: 'app',
   components:{
-    datatable
+    cointable
   }
 }
 
@@ -148,16 +147,7 @@ a.pagination-link.pagination-previous:active{
 .breadcrumb li.is-active a{
   color:black
 }
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to { 
-    transform: rotate(360deg);
-  }
+img.bcoin{
+  height:70%
 }
-img.photon {
-    animation: rotate 10.0s infinite linear;
-}
-
 </style>
