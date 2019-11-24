@@ -14,17 +14,17 @@
     </b-navbar>
     <div id="page-wrap">
     <b-tabs type="is-toggle" position="is-centered" mobile-burger="true" left="true" >
-      <b-tab-item label="Cryptocurrency">
+      <b-tab-item label="Bitcoin Price Index">
       <nav class="breadcrumb" aria-label="breadcrumbs">
       <ul>
         <li><a href="#">Home</a></li>
-        <li class="is-active"><a href="#" aria-current="page">Cryptocurrency</a></li>
+        <li class="is-active"><a href="#" aria-current="page">Bitcoin Price Index</a></li>
       </ul>
       </nav>
       <div class="tile is-ancestor">
         <div class="tile is-parent">
           <div class="tile is-child box">
-            <p class="title">Cryptocurrency</p>
+            <p class="title">Bitcoin Price Index</p>
               <img src="../public/img/logo.png" class="bcoin">
             
           </div> 
@@ -35,7 +35,18 @@
           <cointable/>
         </div>
         <div class="tile is-child  box">
-          <hiscoin/>
+          <p class="title">Value Over Time</p>
+          <b-tabs position="is-centered">
+            <b-tab-item label="USD">
+              <hiscoinUSD/>
+            </b-tab-item>
+            <b-tab-item label="EUR">
+              <hiscoinEUR/>
+            </b-tab-item>
+            <b-tab-item label="GPB">
+              <hiscoinGPB/>
+            </b-tab-item>
+          </b-tabs>
           <test/>
             </div>
         </div>
@@ -76,15 +87,19 @@ import Buefy from 'buefy'
 import 'font-awesome/css/font-awesome.min.css'
 import axios from 'axios'
 import cointable from './components/datatable.vue'
-import hiscoin from './components/hiscoin.vue'
-Vue.use(Buefy, axios,cointable,hiscoin,{
+import hiscoinUSD from './components/hiscoinUSD.vue'
+import hiscoinEUR from './components/hiscoinEUR.vue'
+import hiscoinGPB from './components/hiscoinGPB.vue'
+Vue.use(Buefy, axios,cointable,hiscoinUSD,hiscoinEUR,hiscoinGPB,{
   defaultIconPack: "fa"
 })
 export default {
   name: 'app',
   components:{
     cointable,
-    hiscoin
+    hiscoinUSD,
+    hiscoinEUR,
+    hiscoinGPB,
   }
 }
 
@@ -120,7 +135,10 @@ img {
   border-color:black;
   color: black
 }
-
+.tabs li.is-active a{
+  color: black;
+  border-color:black;
+}
 .navbar-menu a{
   color:black!important;
 }
@@ -150,6 +168,6 @@ a.pagination-link.pagination-previous:active{
   color:black
 }
 img.bcoin{
-  height:70%
+  height:60%
 }
 </style>

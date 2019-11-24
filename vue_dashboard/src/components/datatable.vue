@@ -1,6 +1,6 @@
 <template>
     <div id="cointable">
-        <p class="title">Bitcoin Value</p>
+        <p class="title">Current Value</p>
           <b-table :data="dbcoin" :columns="columns" backend-sorting backend-pagination></b-table>
     </div>
 </template>
