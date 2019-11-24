@@ -25,7 +25,6 @@ class datatable extends Vue{
   dusd=[];
   dgb=[];
   deur=[];
- 
   //isPaginated= true; isPaginationSimple: false;paginationPosition: 'bottom', perPage: 5, currentPage: 1
   columns=[
     {
@@ -49,6 +48,7 @@ class datatable extends Vue{
         this.dbcoin.push(this.dgb)
         this.dbcoin.push(this.deur)
       })
+      
   }
 
 } export default datatable;

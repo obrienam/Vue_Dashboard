@@ -35,7 +35,8 @@
           <cointable/>
         </div>
         <div class="tile is-child  box">
-          <cointable/>
+          <hiscoin/>
+          <test/>
             </div>
         </div>
         
@@ -75,14 +76,15 @@ import Buefy from 'buefy'
 import 'font-awesome/css/font-awesome.min.css'
 import axios from 'axios'
 import cointable from './components/datatable.vue'
-
-Vue.use(Buefy, axios,cointable,{
+import hiscoin from './components/hiscoin.vue'
+Vue.use(Buefy, axios,cointable,hiscoin,{
   defaultIconPack: "fa"
 })
 export default {
   name: 'app',
   components:{
-    cointable
+    cointable,
+    hiscoin
   }
 }
 
