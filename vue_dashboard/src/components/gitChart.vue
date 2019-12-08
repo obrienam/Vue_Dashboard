@@ -17,17 +17,10 @@
           <p class="title">Value Over Time</p>
           <b-tabs position="is-centered">
             <b-tab-item label="Vue_Dashboard">
-              
+              {{vdata2}}
                 <b-table :data="vdata1" :columns="columns" backend-sorting backend-pagination></b-table>
             </b-tab-item>
-            <b-tab-item label="CV_Research">
-              
-                <b-table :data="dbcoin" :columns="columns" backend-sorting backend-pagination></b-table>
-            </b-tab-item>
-            <b-tab-item label="Undergrad Thesis">
-              
-                <b-table :data="dbcoin" :columns="columns" backend-sorting backend-pagination></b-table>
-            </b-tab-item>
+            
           </b-tabs>
           <test/>
             </div>
@@ -49,9 +42,12 @@ Vue.use(Buefy, axios,{
 
 @Component 
 class gitChart extends Vue{
-    
+  
+ 
   err=false;
+  alldata=[];
   vdata1=[];
+  
   vdata2=[];
   //isPaginated= true; isPaginationSimple: false;paginationPosition: 'bottom', perPage: 5, currentPage: 1
   columns=[
@@ -66,18 +62,21 @@ class gitChart extends Vue{
     {
       field:"message",
       label:"comment"
-    },
+    }
   ];
   mounted () {
       axios
       .get('https://api.github.com/repos/obrienam/Vue_Dashboard/commits')
       .then(response => {
-        this.vdata1.push(response.author)
-        this.vdata2.push(response.message)
-        this.vdata1=this.vdata1.concat(this.vdata2)
+        this.vdata1.push(response.data[0].commit.author)
+        this.vdata2.push(response.data[0].commit.message)
+        //this.vdata2.push(response.message)
+        this.vdata1.push(this.vdata2)
       })
       
   }
+  
+  
 
 } export default gitChart;
 </script>
