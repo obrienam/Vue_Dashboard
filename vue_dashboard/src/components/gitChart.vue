@@ -17,7 +17,7 @@
           <p class="title">Value Over Time</p>
           <b-tabs position="is-centered">
             <b-tab-item label="Vue_Dashboard">
-              {{vdata2}}
+              {{vdata1}}
                 <b-table :data="vdata1" :columns="columns" backend-sorting backend-pagination></b-table>
             </b-tab-item>
             
@@ -70,8 +70,7 @@ class gitChart extends Vue{
       .then(response => {
         this.vdata1.push(response.data[0].commit.author)
         this.vdata2.push(response.data[0].commit.message)
-        //this.vdata2.push(response.message)
-        this.vdata1.push(this.vdata2)
+        this.vdata1.push(this.vdata2[0])
       })
       
   }
