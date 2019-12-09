@@ -60,20 +60,11 @@
       <ul>
         <li><a href="#">Home</a></li>
         <li class="is-active"><a href="#" aria-current="page">GitHub</a></li>
-        <gitThesis/>
+        <gitTable/>
       </ul>
       </nav>
       </b-tab-item>
-      <b-tab-item label="Table Experiments">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li class="is-active"><a href="#" aria-current="page">Table Experiments</a></li>
-        </ul>
-        </nav>
-        <h1>Test Data</h1>
-          <datatable/>
-      </b-tab-item>
+     
     </b-tabs>  
     </div>
 
@@ -91,8 +82,8 @@ import cointable from './components/datatable.vue'
 import hiscoinUSD from './components/hiscoinUSD.vue'
 import hiscoinEUR from './components/hiscoinEUR.vue'
 import hiscoinGPB from './components/hiscoinGPB.vue'
-import gitThesis from './components/gitThesis.vue'
-Vue.use(Buefy, axios,cointable,hiscoinUSD,hiscoinEUR,hiscoinGPB,gitThesis,{
+import gitTable from './components/gitTable.vue'
+Vue.use(Buefy, axios,cointable,hiscoinUSD,hiscoinEUR,hiscoinGPB,gitTable,{
   defaultIconPack: "fa"
 })
 export default {
@@ -102,7 +93,7 @@ export default {
     hiscoinUSD,
     hiscoinEUR,
     hiscoinGPB,
-    gitThesis,
+    gitTable,
   }
 }
 
