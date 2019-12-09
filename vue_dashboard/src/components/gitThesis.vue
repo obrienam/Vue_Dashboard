@@ -1,7 +1,7 @@
 <template>
 <div id=gitThesis>
   
-    <b-table :data="gdata1" :columns="columns" backend-sorting backend-pagination></b-table>
+    <b-table :data="gdata" :columns="columns" backend-sorting backend-pagination></b-table>
 </div>
 </template>
 <script>
@@ -17,11 +17,7 @@ Vue.use(axios,Buefy,{
 export default {
   data() {
             return {
-                alldata:[],  
-                gdata1:[],
-                gdata2:[], 
-                gdata:[],  
-                l:[],     
+                gdata:[],
                 columns:[
                 {
                 field:"name",
@@ -53,9 +49,7 @@ export default {
         var i;
         for (i=0;i < this.data.length; i++) {
         this.data[i].commit.author.message=this.data[i].commit.message
-        this.gdata1.push(this.data[i].commit.author)
-        this.gdata2.push(this.data[i].commit.message)
-        
+        this.gdata.push(this.data[i].commit.author)
         }
         
       }
