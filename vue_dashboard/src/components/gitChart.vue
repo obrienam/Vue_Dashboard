@@ -1,31 +1,7 @@
 <template>
     <div id="gitChart">
-    <div class="tile is-ancestor">
-        <div class="tile is-parent">
-          <div class="tile is-child box">
-            <p class="title">GitHub</p>
-              
-            
-          </div> 
-        </div>
-        
-        <div class="tile is-5 is-vertical is-parent">
-        <div class="tile is-child box">
-          <cointable/>
-        </div>
-        <div class="tile is-child  box">
-          <p class="title">Value Over Time</p>
-          <b-tabs position="is-centered">
-            <b-tab-item label="Vue_Dashboard">
-              {{vdata1}}
-                <b-table :data="vdata1" :columns="columns" backend-sorting backend-pagination></b-table>
-            </b-tab-item>
-            
-          </b-tabs>
-          <test/>
-            </div>
-        </div>
-    </div>
+      
+      <gitChartvd/>
     </div>
 </template>
 <script>
@@ -35,8 +11,8 @@ import Buefy from 'buefy'
 import 'font-awesome/css/font-awesome.min.css'
 import axios from 'axios'
 import Component from "vue-class-component"
-
-Vue.use(Buefy, axios,{
+import gitChartvd from "./gitChartvd.vue"
+Vue.use(Buefy, axios,gitChartvd,{
   defaultIconPack: "fa"
 })
 

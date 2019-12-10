@@ -26,14 +26,12 @@
           <div class="tile is-child box">
             <p class="title">Bitcoin Price Index</p>
               <img src="../public/img/logo.png" class="bcoin">
-            
+      
           </div> 
         </div>
         
-        <div class="tile is-5 is-vertical is-parent">
-        <div class="tile is-child box">
-          <cointable/>
-        </div>
+        <div class="tile is-8 is-vertical is-parent">
+        
         <div class="tile is-child  box">
           <p class="title">Value Over Time</p>
           <b-tabs position="is-centered">
@@ -52,53 +50,65 @@
         </div>
         
       </div>
-      
+      <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child box">
+                  <cointable/>
+              </div> 
+            </div>
+      </div>
       
       </b-tab-item> 
-      <b-tab-item label="Git">
-      <nav class="breadcrumb" aria-label="breadcrumbs">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li class="is-active"><a href="#" aria-current="page">GitHub</a></li>
-      </ul>
-      </nav>
-        <div class="tile is-ancestor">
-        <div class="tile is-parent">
+      <b-tab-item label="GitHub">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li class="is-active"><a href="#" aria-current="page">GitHub</a></li>
+        </ul>
+        </nav>
+          <div class="tile is-ancestor">
+          <div class="tile is-parent">
+            <div class="tile is-child box">
+              <p class="title">GitHub</p>
+                <img src="../public/img/Gitlogo.png" class="bcoin">
+        
+            </div> 
+          </div>
+          
+          <div class="tile is-8 is-vertical is-parent">
           <div class="tile is-child box">
-            <p class="title">Bitcoin Price Index</p>
-              <img src="../public/img/logo.png" class="bcoin">
+            <b-tabs position="is-centered">
+              <b-tab-item label="Honors-Thesis">
+                <gitChartht/>
+              </b-tab-item>
+              <b-tab-item label="Vue_Dashboard">
+                <gitChartvd/>
+              </b-tab-item>
+              <b-tab-item label="CV_Research">
+                <gitChartcvr/>
+              </b-tab-item>
+            </b-tabs>
+          </div>
             
-          </div> 
-        </div>
-        
-        <div class="tile is-5 is-vertical is-parent">
-        <div class="tile is-child box">
-          <gitTable/>
-        </div>
-        <div class="tile is-child  box">
-          <p class="title">Value Over Time</p>
-          <b-tabs position="is-centered">
-            <b-tab-item label="USD">
-              <hiscoinUSD/>
-            </b-tab-item>
-            <b-tab-item label="EUR">
-              <hiscoinEUR/>
-            </b-tab-item>
-            <b-tab-item label="GPB">
-              <hiscoinGPB/>
-            </b-tab-item>
-          </b-tabs>
-          <test/>
-            </div>
-        </div>
-        
+          </div>
+          
       </div>
-      </b-tab-item>
-     
-    </b-tabs>  
-    </div>
+        
+      <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <div class="tile is-child box">
+                <p class="title">Commit History</p>
+                  <gitTable/>
+              </div> 
+            </div>
+            
+            </div>
+          </b-tab-item>
+        
+        </b-tabs>  
+        </div>
 
-  </div>
+      </div>
   
 </template>
 
@@ -113,7 +123,10 @@ import hiscoinUSD from './components/hiscoinUSD.vue'
 import hiscoinEUR from './components/hiscoinEUR.vue'
 import hiscoinGPB from './components/hiscoinGPB.vue'
 import gitTable from './components/gitTable.vue'
-Vue.use(Buefy, axios,cointable,hiscoinUSD,hiscoinEUR,hiscoinGPB,gitTable,{
+import gitChartvd from './components/gitChartvd.vue'
+import gitChartht from './components/gitChartht.vue'
+import gitChartcvr from './components/gitChartcvr.vue'
+Vue.use(Buefy, axios,cointable,hiscoinUSD,hiscoinEUR,hiscoinGPB,gitTable,gitChartvd,gitChartht,gitChartcvr,{
   defaultIconPack: "fa"
 })
 export default {
@@ -124,6 +137,9 @@ export default {
     hiscoinEUR,
     hiscoinGPB,
     gitTable,
+    gitChartvd,
+    gitChartht,
+    gitChartcvr,
   }
 }
 
