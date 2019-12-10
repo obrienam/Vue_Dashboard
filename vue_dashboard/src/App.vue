@@ -60,9 +60,39 @@
       <ul>
         <li><a href="#">Home</a></li>
         <li class="is-active"><a href="#" aria-current="page">GitHub</a></li>
-        <gitTable/>
       </ul>
       </nav>
+        <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <div class="tile is-child box">
+            <p class="title">Bitcoin Price Index</p>
+              <img src="../public/img/logo.png" class="bcoin">
+            
+          </div> 
+        </div>
+        
+        <div class="tile is-5 is-vertical is-parent">
+        <div class="tile is-child box">
+          <gitTable/>
+        </div>
+        <div class="tile is-child  box">
+          <p class="title">Value Over Time</p>
+          <b-tabs position="is-centered">
+            <b-tab-item label="USD">
+              <hiscoinUSD/>
+            </b-tab-item>
+            <b-tab-item label="EUR">
+              <hiscoinEUR/>
+            </b-tab-item>
+            <b-tab-item label="GPB">
+              <hiscoinGPB/>
+            </b-tab-item>
+          </b-tabs>
+          <test/>
+            </div>
+        </div>
+        
+      </div>
       </b-tab-item>
      
     </b-tabs>  

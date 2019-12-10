@@ -1,7 +1,20 @@
 <template>
-<div id=gitThesis>
-  
-    <b-table :data="gdata4" :columns="columns" backend-sorting backend-pagination></b-table>
+<div id=gitTable>
+    <b-tabs position="is-centered">
+      <p class="title">Commit History</p>
+        <b-tab-item label="Honors-Thesis">
+          <b-table :data="gdata" :columns="columns" paginated :per-page="10" backend-sorting></b-table>
+        </b-tab-item>  
+        <b-tab-item label="Vue_Dashboard">
+          <b-table :data="gdata2" :columns="columns" paginated :per-page="10" backend-sorting></b-table>
+        </b-tab-item>  
+        <b-tab-item label="Steminar-Duck-Game">
+          <b-table :data="gdata3" :columns="columns" paginated :per-page="10" backend-sorting></b-table>
+        </b-tab-item>  
+        <b-tab-item label="CV_Research">
+          <b-table :data="gdata4" :columns="columns" paginated :per-page="10" backend-sorting></b-table>
+        </b-tab-item>  
+    </b-tabs>
 </div>
 </template>
 <script>
@@ -21,18 +34,27 @@ export default {
                 gdata2:[],
                 gdata3: [],
                 gdata4:[],
+                defaultSortDirection: 'asc',
+                sortIcon: 'arrow-up',
+                sortIconSize: 'is-small',
                 columns:[
                 {
                 field:"name",
                 label:"User",
+                searchable:true
+      
                 },
                 {
                 field:"date",
                 label:"Date",
+                searchable:true
+                
                 },
                 {
                 field:"message",
-                label:"comment"
+                label:"Comment",
+                searchable:true
+           
                 }
             ]
             }
