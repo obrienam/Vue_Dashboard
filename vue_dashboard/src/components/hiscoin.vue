@@ -11,7 +11,6 @@ export default {
   extends: Bar,
   data() {
             return {
-                data:[],  
                 ds:[], 
                 l:[],     
                 

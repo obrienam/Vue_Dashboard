@@ -77,6 +77,7 @@
           
           <div class="tile is-8 is-vertical is-parent">
           <div class="tile is-child box">
+            <p class="title">Language Distribution</p>
             <b-tabs position="is-centered">
               <b-tab-item label="Honors-Thesis">
                 <gitChartht/>

@@ -3,16 +3,16 @@
     <b-tabs position="is-centered">
       
         <b-tab-item label="Honors-Thesis">
-          <b-table :data="gdata" :columns="columns" paginated :per-page="5" backend-sorting></b-table>
+          <b-table :data="gdata" :columns="columns" paginated :per-page="5"></b-table>
         </b-tab-item>  
         <b-tab-item label="Vue_Dashboard">
-          <b-table :data="gdata2" :columns="columns" paginated :per-page="5" backend-sorting></b-table>
+          <b-table :data="gdata2" :columns="columns" paginated :per-page="5"></b-table>
         </b-tab-item>  
         <b-tab-item label="Steminar-Duck-Game">
-          <b-table :data="gdata3" :columns="columns" paginated :per-page="5" backend-sorting></b-table>
+          <b-table :data="gdata3" :columns="columns" paginated :per-page="5"></b-table>
         </b-tab-item>  
         <b-tab-item label="CV_Research">
-          <b-table :data="gdata4" :columns="columns" paginated :per-page="5" backend-sorting></b-table>
+          <b-table :data="gdata4" :columns="columns" paginated :per-page="5"></b-table>
         </b-tab-item>  
     </b-tabs>
 </div>
@@ -42,20 +42,23 @@ export default {
                 field:"name",
                 label:"User",
                 searchable:true,
-                narrowed:true
+                narrowed:true,
+                sortable:true
                 },
                 {
                 field:"date",
                 label:"Date",
                 searchable:true,
-                narrowed:true
+                narrowed:true,
+                sortable:true
                 
                 },
                 {
                 field:"message",
                 label:"Comment",
                 searchable:true,
-                narrowed:true
+                narrowed:true,
+                sortable:true
            
                 }
             ]

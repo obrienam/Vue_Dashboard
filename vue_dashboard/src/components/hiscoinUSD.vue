@@ -10,8 +10,7 @@ Vue.use(axios,Bar,{
 export default {
   extends: Bar,
   data() {
-            return {
-                data:[],  
+            return { 
                 ds:[], 
                 l:[],     
                 

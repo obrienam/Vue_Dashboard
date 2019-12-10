@@ -10,7 +10,6 @@ export default {
   extends: Doughnut,
   data() {
             return {
-                data:[], 
                 ds:[], 
                 l:[],     
                 
